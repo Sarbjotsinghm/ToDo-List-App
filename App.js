@@ -27,6 +27,16 @@ const App = () => {
   );
 };
 
+
+const addTodo = () => {
+  fixTodos([...todos, {id: Date.now(), text: newText, Done: false}]);
+};
+
+const handleDeleteTodo = id => {
+  fixTodos(todos.filter(todo => todo.id !== id));
+  console.log();
+};
+
   const Header = () => {
     return (
       <>
