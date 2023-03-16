@@ -96,3 +96,65 @@ const App = () => {
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
+    padding: 22,
+    flex: 1,
+    // marginVertical: 8,
+  },
+  title: {
+    fontSize: 30,
+  },
+  input: {
+    height: 42,
+    flex: 1,
+    margin: 14,
+    borderWidth: 1,
+    padding: 12,
+  },
+  addWrapper: {
+    width: 38,
+    height: 38,
+    backgroundColor: '#FFF',
+    borderRadius: 65,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+  },
+  TaskWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 11,
+  },
+  mark: {
+    fontSize: 18,
+  },
+  todo: {
+    flexDirection: 'row',
+    marginHorizontal: 22,
+  },
+  deletedButton: {
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 22,
+    color: 'white',
+  },
+  deletedText: {
+    color: 'white',
+  },
+  heading: {
+    fontSize: 44,
+    color: 'brown',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+});
+
+export default App;
