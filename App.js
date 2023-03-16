@@ -39,6 +39,13 @@ const App = () => {
           textColor={color}
           style={styles.listItem}
         />
+        <TouchableOpacity
+          onPress={() => handleDeleteTodo(item.id)}
+          style={styles.deletedButton}>
+          <View>
+            <Text style={styles.deletedText}>delete</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -62,6 +69,11 @@ const App = () => {
             placeholder={'Write a List...'}
             onChangeText={text => (newText = text)}
           />
+          <TouchableOpacity onPress={addTodo}>
+            <View style={styles.addWrapper}>
+              <Text style={styles.mark}>+</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </>
     );
