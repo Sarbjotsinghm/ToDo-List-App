@@ -13,6 +13,20 @@ const App = () => {
   const [todos, fixTodos] = React.useState([]);
   let newText = '';
 
+  return (
+    <View style={styles.todo}>
+      <Item
+        key={item.id}
+        item={item}
+        onPress={() => DoneItem(item.id)}
+        backgroundColor={backgroundColor}
+        textColor={color}
+        style={styles.listItem}
+      />
+    </View>
+  );
+};
+
   const Header = () => {
     return (
       <>
