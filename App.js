@@ -13,6 +13,21 @@ const App = () => {
   const [todos, fixTodos] = React.useState([]);
   let newText = '';
 
+  const Header = () => {
+    return (
+      <>
+        <Text style={styles.heading}>T</Text>
+        <View style={styles.TaskWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder={'Write a List...'}
+            onChangeText={text => (newText = text)}
+          />
+        </View>
+      </>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
