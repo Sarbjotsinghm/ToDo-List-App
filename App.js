@@ -13,29 +13,44 @@ const App = () => {
   const [todos, fixTodos] = React.useState([]);
   let newText = '';
 
-  return (
-    <View style={styles.todo}>
-      <Item
-        key={item.id}
-        item={item}
-        onPress={() => DoneItem(item.id)}
-        backgroundColor={backgroundColor}
-        textColor={color}
-        style={styles.listItem}
-      />
-    </View>
-  );
-};
+  const renderlist = ({item}) => {
+    const backgroundColor = item.Done ? 'white' : 'white';
+    const color = item.Done ? '#DADADA' : 'black';
 
+    const DoneItem = id => {
+      console.log(id);
+      const updatedTodos = todos.map(todo => {
+        if (todo.id === id) {
+          todo.Done = !todo.Done;
+        }
+        return todo;
+      });
+      console.log(updatedTodos);
+      fixTodos(updatedTodos);
+    };
 
-const addTodo = () => {
-  fixTodos([...todos, {id: Date.now(), text: newText, Done: false}]);
-};
+    return (
+      <View style={styles.todo}>
+        <Item
+          key={item.id}
+          item={item}
+          onPress={() => DoneItem(item.id)}
+          backgroundColor={backgroundColor}
+          textColor={color}
+          style={styles.listItem}
+        />
+      </View>
+    );
+  };
 
-const handleDeleteTodo = id => {
-  fixTodos(todos.filter(todo => todo.id !== id));
-  console.log();
-};
+  const addTodo = () => {
+    fixTodos([...todos, {id: Date.now(), text: newText, Done: false}]);
+  };
+
+  const handleDeleteTodo = id => {
+    fixTodos(todos.filter(todo => todo.id !== id));
+    console.log();
+  };
 
   const Header = () => {
     return (
