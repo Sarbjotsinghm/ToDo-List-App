@@ -49,7 +49,13 @@ const App = () => {
       </View>
     );
   };
-
+  const Item = ({item, onPress, backgroundColor, textColor}) => (
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.item, {backgroundColor}]}>
+      <Text style={[styles.title, {color: textColor}]}>{item.text}</Text>
+    </TouchableOpacity>
+  );
   const addTodo = () => {
     fixTodos([...todos, {id: Date.now(), text: newText, Done: false}]);
   };
